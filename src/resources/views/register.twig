@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration system PHP and MySQL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .FieldInfo
+        {
+
+            color:#8B4040;
+            font-family:Bitter,Georgia,"Times New Roman",serif;
+            font-size:0.9em;
+        }
+        a {
+            text-decoration:none;
+        }
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-size: 120%;
+
+            font-family: Helvetica, sans-serif;
+        }
+
+        .header {
+            width: 30%;
+            margin: 50px auto 0px;
+            color: white;
+            background: rgba(255,255,255,0.3);
+            text-align: center;
+            padding: 20px;
+        }
+        form, .content {
+            width: 30%;
+            margin: 0px auto;
+            padding: 20px;
+
+            background: rgba(120,223,230,0.2);
+
+        }
+        .input-group {
+            margin: 10px 0px 10px 0px;
+        }
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin: 3px;
+        }
+        .input-group input {
+            height: 30px;
+            width: 93%;
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        .btn {
+            padding: 10px;
+            font-size: 15px;
+            color: white;
+            background: #1F69C9;
+            border: none;
+            border-radius: 5px;
+            width:399px;
+        }
+        .error {
+            width: 92%;
+            margin: 0px auto;
+            padding: 10px;
+            border: 1px solid #a94442;
+            color: #a94442;
+            background: #f2dede;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .success {
+            color: #3c763d;
+            background: #dff0d8;
+            border: 1px solid #3c763d;
+            margin-bottom: 20px;
+        }
+
+        #submitbtn {
+            background-color: #ff6659; /* Green */
+            border-radius: 5px;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 0 10px 0 10px;
+            cursor: pointer;
+        }
+
+                                                                                                                                                                                                                                           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                                                                                                                                                                                                                                                                                                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-xs-12" >
+
+        </div>
+        <div class="col-lg-3 " ></div>
+        <div class="col-lg-6 col-xs-12 text-center" >
+            <div class="header" style="background:rgba(120,223,230,0.2); margin-top:10px;">
+                <h2 class="FieldInfo" style="font-size:30px; color:#720D11">Register</h2>
+            </div>
+
+            <form method="post" action="register.twig">
+
+                <div class="input-group">
+                    <label class="FieldInfo">Name:</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="input-group">
+                    <label class="FieldInfo">Surname:</label>
+                    <input type="text" name="surname" value="">
+                </div>
+                <div class="input-group">
+                    <label class="FieldInfo">Username:</label>
+                    <input type="text" name="username" value="">
+                </div>
+                <div class="input-group">
+                    <label class="FieldInfo">Email:</label>
+                    <input type="email" name="email" value="">
+                </div>
+                <div class="input-group">
+                    <label class="FieldInfo">Phone:</label>
+                    <input type="text" name="phone" value="">
+                </div>
+                <div class="input-group">
+                    <label class="FieldInfo">Address:</label>
+                    <input type="text" name="address" value="">
+                </div>
+                <div class="input-group">
+                    <label class="FieldInfo">Password:</label>
+                    <input type="password" name="password_1">
+                </div>
+                <div class="input-group">
+                    <label class="FieldInfo">Confirm password:</label>
+                    <input type="password" name="password_2">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn" style="width:98% !important" name="reg_user">Register</button>
+                </div>
+                <p class="FieldInfo" style="color:#580A0A;">
+                    Already a member? <a href="{{ path_for('login')}}">Sign in</a>
+                </p>
+            </form>
+        </div>
+        <div class="col-lg-5 col-xs-12 text-center" >
+        </div>
+    </div>
+</body>
+</html>
