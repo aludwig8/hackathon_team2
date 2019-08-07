@@ -1,5 +1,23 @@
 {
-    "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Src\\": "src/"
     }
+  },
+  "config": {
+    "process-timeout": 0,
+    "sort-packages": true
+  },
+  "scripts": {
+    "start": "php -S localhost:8080 -t src/public"
+  },
+  "require": {
+    "j4mie/idiorm": "^1.5",
+    "j4mie/paris": "^1.5",
+    "respect/validation": "^1.1",
+    "slim/twig-view": "^2.5"
+  }
 }
