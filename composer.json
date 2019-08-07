@@ -4,6 +4,10 @@
   },
   "autoload-dev": {
     "psr-4": {
+    }
+  },
+  "autoload": {
+    "psr-4": {
       "Src\\": "src/"
     }
   },

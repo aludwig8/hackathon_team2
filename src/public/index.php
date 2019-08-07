@@ -1,4 +1,5 @@
 <?php
 
-//  this is an empty template;
-echo 'success';
+use Src\Model\User;
+
+require __DIR__ . '/../../vendor/autoload.php';
