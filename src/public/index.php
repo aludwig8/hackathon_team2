@@ -1,5 +1,10 @@
 <?php
 
-use Src\Model\User;
+require __DIR__ . '/../../src/config/app.php';
 
-require __DIR__ . '/../../vendor/autoload.php';
+$app->get('/home', function ($request, $response) {
+    return $this->view->render($response, 'home.twig');
+});
+
+$app->run();
+
