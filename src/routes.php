@@ -11,9 +11,7 @@ return function (App $app) {
         return $this->view->render($response, 'register.twig');
     })->setName('register');
 
-    $app->get('/index', function ($request, $response) {
-        return $this->view->render($response, 'index.twig');
-    })->setName('home');
+    $app->get('/index','Src\Controller\HomeController:index')->setName('home');
 
     $app->get('/about', function ($request, $response) {
         return $this->view->render($response, 'about.twig');
