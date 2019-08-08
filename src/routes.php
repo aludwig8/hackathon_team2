@@ -3,21 +3,13 @@
 use Slim\App;
 
 return function (App $app) {
-    $app->get('/login', function ($request, $response) {
-        return $this->view->render($response, 'login.twig');
-    })->setName('login');
 
-    $app->get('/register', function ($request, $response) {
-        return $this->view->render($response, 'register.twig');
-    })->setName('register');
 
-    $app->get('/index','Src\Controller\HomeController:index')->setName('home');
+    $app->get('/','Src\Controller\HomeController:index')->setName('home');
+    $app->get('/about','Src\Controller\HomeController:about')->setName('about');
+    $app->get('/products','Src\Controller\HomeController:products')->setName('products');
+    $app->get('/login','Src\Controller\HomeController:login')->setName('login');
+    $app->get('/register','Src\Controller\HomeController:register')->setName('register');
 
-    $app->get('/about', function ($request, $response) {
-        return $this->view->render($response, 'about.twig');
-    })->setName('about');
 
-    $app->get('/products', function ($request, $response) {
-        return $this->view->render($response, 'products.twig');
-    })->setName('products');
 };
