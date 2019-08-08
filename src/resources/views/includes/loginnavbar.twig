@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            font-family: "Helvetica Neue" !important;
+            font-size: 14px !important;
+            color: #333333 !important;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            font-family: "Raleway", sans-serif;
+        }
+
+        li {
+            float: left;
+            font-family: "Raleway", sans-serif;
+            color: #333333;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: "Raleway", sans-serif;
+
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<ul>
+
+
+    <li style="float:right"><a href="{{path_for('login')}}">login</p></a></li>
+    <li style="float:right"><a  href="{{path_for('register')}}">sign up</a></li>
+</ul>
+
+</body>
+</html>
