@@ -20,4 +20,14 @@ class User extends Model
     {
         return $this->belongs_to(Role::class,'role_id','id');
     }
+
+    public function orders()
+    {
+        return $this->has_many(Order::class,'user_id','id');
+    }
+
+    public function products()
+    {
+        return $this->has_many(Product::class,'user_id','id');
+    }
 }
