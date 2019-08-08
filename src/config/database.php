@@ -10,6 +10,6 @@ try {
     ORM::configure('password', 'root');
     ORM::configure('return_result_sets', true);
     ORM::configure('id_column', array('id'));
-} catch (PDOException $e) {
+} catch (Exception $e) {
     echo "Connection failed: " . $e->getMessage();
 }

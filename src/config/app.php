@@ -21,11 +21,11 @@ $container['validator'] = function ($container) {
     return new \Src\Validation\Validator();
 };
 
-$container['flash'] = function($container) {
+$container['flash'] = function ($container) {
     return new \Slim\Flash\Messages;
 };
 
-$container['auth'] = function($container) {
+$container['auth'] = function ($container) {
     return new \Src\Controller\Auth\Auth();
 };
 
@@ -42,14 +42,27 @@ $container['view'] = function ($container) {
         new Slim\Flash\Messages()
     ));
 
-    $container['flash'] = function () {
-        return new \Slim\Flash\Messages();
-    };
-
-   // dd('test');
+    // dd('test');
 
 
     return $view;
+};
+
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages();
+};
+
+$container['errorHandler'] = function ($container) {
+    return function ($request, $response, $exception) use ($container) {
+        //Format of exception to return
+        $data = [
+            'message' => $exception->getMessage()
+        ];
+
+       $error = $exception->getMessage();
+
+        return $container['view']->render($response,'error.twig', compact('error'));
+    };
 };
 
 v::with('Src\\Validation\\Rules');
