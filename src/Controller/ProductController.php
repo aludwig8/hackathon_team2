@@ -20,6 +20,6 @@ class ProductController extends BaseController
     {
         $categories = Category::find_many();
         $products = Product::where('category_id',$request->getParam('category_id'))->findMany();
-        return $this->container->view->render($response, 'products.twig', compact('categories'));
+        return $this->container->view->render($response, 'products.twig', compact('categories','products'));
     }
 }
