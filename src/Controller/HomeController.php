@@ -6,9 +6,9 @@ namespace Src\Controller;
 
 class HomeController extends BaseController
 {
-    public function index($request, $response)
+    public function home($request, $response)
     {
-        return $this->container->view->render($response, 'index.twig');
+        return $this->container->view->render($response, 'home.twig');
     }
 
     public function about($request, $response)
@@ -30,10 +30,7 @@ class HomeController extends BaseController
     {
         return $this->container->view->render($response, 'register.twig');
     }
-    public function home($request, $response)
-    {
-        return $this->container->view->render($response, 'home.twig');
-    }
+
 
 
 
