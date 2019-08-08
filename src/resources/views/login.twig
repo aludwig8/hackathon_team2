@@ -120,11 +120,11 @@
                 <h2 class="FieldInfo" style="font-size:30px; color:#720D11">Login</h2>
             </div>
 
-            <form method="post" action="#">
+            <form method="post" action="{{ path_for('login.submit') }}">
                 <?php include('errors.php'); ?>
                 <div class="input-group">
                     <label class="FieldInfo">Username:</label>
-                    <input type="text" name="username" >
+                    <input type="text" name="email" >
                     <span class="glyphicon glyphicon-user text-primary"></span>
                 </div>
                 <div class="input-group">
@@ -132,7 +132,7 @@
                     <input type="password" name="password">
                 </div>
                 <div class="input-group">
-                    <button type="submit" class="btn" style="width:98% !important" name="login_user">Login</button>
+                    <button type="submit" class="btn" style="width:98% !important">Login</button>
                 </div>
                 <p class="FieldInfo" style="color:#000; font-size:0.8em;">
                     Not a member yet? <a href="{{ path_for('register')}}">  Sign up</a>

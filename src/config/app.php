@@ -12,10 +12,6 @@ $app = new \Slim\App([
     ]
 ]);
 
-$app->get('/first', function($request, $response) {
-    return 'My first route';
-});
-
 /*model prefixing
 Model::$short_table_names = true;*/
 
@@ -27,6 +23,10 @@ $container['validator'] = function ($container) {
 
 $container['flash'] = function($container) {
     return new \Slim\Flash\Messages;
+};
+
+$container['auth'] = function($container) {
+    return new \Src\Controller\Auth\Auth();
 };
 
 $container['view'] = function ($container) {
@@ -46,5 +46,11 @@ $container['view'] = function ($container) {
         return new \Slim\Flash\Messages();
     };
 
+   // dd('test');
+
+
     return $view;
 };
+
+v::with('Src\\Validation\\Rules');
+

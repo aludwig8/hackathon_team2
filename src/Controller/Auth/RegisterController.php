@@ -6,6 +6,7 @@ namespace Src\Controller\Auth;
 
 use Src\Controller\BaseController;
 use Respect\Validation\Validator as v;
+use Src\Model\User;
 
 
 class RegisterController extends BaseController
@@ -18,14 +19,29 @@ class RegisterController extends BaseController
     public function store($request, $response)
     {
         $validation = $this->validator->validate($request, [
-            'email' => v::noWhitespace()->notEmpty()->email(),
-            'full_name' => v::noWhitespace()->notEmpty()->alpha(),
-            'password' => v::noWhitespace()->notEmpty(),
+            'email' => v::noWhitespace()->notEmpty()->email()->length(2, 50)->uniqueEmail(),
+            'full_name' => v::noWhitespace()->notEmpty()->length(2, 50)->alpha(),
+            'password' => v::noWhitespace()->notEmpty()->length(5, 20),
         ]);
 
         if ($validation->failed()) {
-            $this->flash->addMessage('error', 'Could not sign up you in with those details');
-            return $response->withRedirect($request->getUri()->getPath());
+            return 'Validation Error';
+            return $response->withRedirect($this->router->pathFor('register'));
         }
+
+        $user = User::create([
+            'email' => $request->getParam('email'),
+            'full_name' => $request->getParam('full_name'),
+            'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
+        ]);
+
+        //set by default simple role
+        $user->role_id = 1;
+
+        $user->save();
+
+        $this->flash->addMessage('message', 'You have been signed up');
+        return $response->withRedirect($this->router->pathFor('login'));
+
     }
 }
