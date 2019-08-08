@@ -10,6 +10,7 @@ class HomeController extends BaseController
     {
         return $this->container->view->render($response, 'index.twig');
     }
+
     public function about($request, $response)
     {
         return $this->container->view->render($response, 'about.twig');
@@ -29,7 +30,6 @@ class HomeController extends BaseController
     {
         return $this->container->view->render($response, 'register.twig');
     }
-
 
 
 }
