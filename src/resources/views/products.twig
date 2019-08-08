@@ -6,8 +6,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-    .w3-bar-block .w3-bar-item {padding:20px}
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Karma", sans-serif
+    }
+
+    .w3-bar-block .w3-bar-item {
+        padding: 20px
+    }
 
 
     .row {
@@ -27,17 +32,17 @@
 
 
 <!-- Top menu -->
-{% include 'includes/navbar.twig'%}
+{% include 'includes/navbar.twig' %}
 <br><br><br>
 <h3 class="w3-center">PRODUCTS OF THE SHOP</h3>
 <p class="w3-center w3-large">The best in Town</p>
-<h4 style="color: #580A0A;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif">Categories</h4>
+<h4 style="color: #580A0A;font-family: " Helvetica Neue", Helvetica, Arial, sans-serif">Categories</h4>
 <ul style="display: inline">
-
-
-    <li style="display: inline;background-color"><a style="text-decoration: none;text-decoration-color: #580A0A" href="">Computers</a></li>
-    <li style="display: inline" ><a style="text-decoration: none;text-decoration-color: #580A0A"  href="">Laptops</a></li>
-    <li style="display: inline" ><a style="text-decoration: none;text-decoration-color: #580A0A"  href="">Printers</a></li>
+    {% for category in categories %}
+        <li style="display: inline;background-color"><a style="text-decoration: none;text-decoration-color: #580A0A"
+                                                        href="/products/filter?category_id={{ category.id }}">{{ category.name }}</a>
+        </li>
+    {% endfor %}
 </ul>
 
 <!-- !PAGE CONTENT! -->
@@ -45,101 +50,19 @@
 
     <!-- First Photo Grid-->
     <div class="w3-row-padding w3-padding-16 w3-center row">
-        <div class="w3-quarter ">
-            <img src="images/1.jpg" alt="" style="width:200px; height:247px">
-            <h3>The Perfect PC, A Real Classic PC</h3>
-            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/bildschirm2.jpg" alt="" style="width:200px; height:227px">
-            <h3>Let Me Tell You About This PC</h3>
-            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
+        {% for product in products %}
 
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/bildschirm3.png" alt="" style="width:200px; height:245px">
-            <h3>Its all you need</h3>
-            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <p>What else?</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/bildschirm4.jpg" alt="" style="width:200px; height:273px">
-            <h3>Once Again, buy it now</h3>
-                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-    </div>
+            <div class="w3-quarter ">
+                <img src="/{{ product.profile_picture }}" alt="" style="width:200px; height:247px">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <input type="submit" name="add_to_cart" style="text-align: center" class="btn btn-danger"
+                       style="float:left; margin-bottom:8px;"
+                       value="Add to Cart"/>
+            </div>
 
+        {% endfor %}
 
-    <!-- Second Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center">
-        <div class="w3-quarter ">
-            <img src="images/drucker1.jpg" alt="" style="width:200px; height:250px;">
-            <h3>All I Need Is a Printer</h3>
-            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/drucker2.jpg" alt="" style="width:200px; height:230px;">
-            <h3>Priters here</h3>
-            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/drucker3.jpg" alt="" style="width:200px; height:250px;">
-            <h3>Something random</h3>
-            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/drucker4.jpg" alt="" style="width:200px; height:250px;">
-            <h3>Le French</h3>
-            <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-    </div>
-
-    <!-- Third Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center">
-        <div class="w3-quarter ">
-            <img src="images/laptop3.png" alt="" style="width:200px; height:250px;">
-            <h3>All I Need Is a Laptop</h3>
-            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter " >
-            <img src="images/laptop.jpeg" alt=""  style="width:200px; height:230px;">
-            <h3>Laptop on sale</h3>
-            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/laptop2.jpg" alt=""  style="width:200px; height:250px;">
-            <h3>The Perfect Laptop</h3>
-            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
-        <div class="w3-quarter ">
-            <img src="images/laptop4.jpg" alt=""  style="width:200px; height:250px;">
-            <h3>Le laptop</h3>
-            <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
-                   value="Add to Cart"/>
-        </div>
     </div>
 
     <!-- Pagination -->
@@ -154,7 +77,11 @@
         <div class="w3-padding-32">
             <h4><b>We are the best!</b></h4>
             <h6><i>With Passion For Real</i></h6>
-            <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+            <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of
+                lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus
+                ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
+                Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies
+                congue gravida diam non fringilla.</p>
         </div>
     </div>
     <hr>

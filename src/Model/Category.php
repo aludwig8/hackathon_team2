@@ -11,7 +11,7 @@ use Model;
  */
 class Category extends Model
 {
-    public static $_table = 'roles';
+    public static $_table = 'categories';
 
     public function products()
     {

@@ -11,6 +11,7 @@ use Model;
  * @property int $category_id
  * @property string $name
  * @property string $description
+ * @property string $profile_picture
  * @property int $stock
  * @property boolean $status
  * @property double $price
