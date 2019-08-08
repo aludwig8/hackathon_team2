@@ -30,6 +30,12 @@ class HomeController extends BaseController
     {
         return $this->container->view->render($response, 'register.twig');
     }
+    public function home($request, $response)
+    {
+        return $this->container->view->render($response, 'home.twig');
+    }
+
+
 
 
 }

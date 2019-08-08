@@ -1,6 +1,168 @@
+<!DOCTYPE html>
+<html>
+<title>Online shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .w3-bar-block .w3-bar-item {padding:20px}
+
+
+    .row {
+        display: flex; /* equal height of the children */
+    }
+
+    .col {
+        flex: 1; /* additionally, equal width */
+
+        padding: 1em;
+        border: solid;
+    }
+</style>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+
+
+<!-- Top menu -->
 {% include 'includes/navbar.twig'%}
+<br><br><br>
+<h3 class="w3-center">PRODUCTS OF THE SHOP</h3>
+<p class="w3-center w3-large">The best in Town</p>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-<div class="Line" style ="height:10px; background:darkred"></div>
+    <!-- First Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center row">
+        <div class="w3-quarter ">
+            <img src="images/1.jpg" alt="" style="width:200px; height:247px">
+            <h3>The Perfect PC, A Real Classic PC</h3>
+            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/bildschirm2.jpg" alt="" style="width:200px; height:227px">
+            <h3>Let Me Tell You About This PC</h3>
+            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/bildschirm3.png" alt="" style="width:200px; height:245px">
+            <h3>Its all you need</h3>
+            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <p>What else?</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/bildschirm4.jpg" alt="" style="width:200px; height:273px">
+            <h3>Once Again, buy it now</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+    </div>
+
+    <!-- Second Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-quarter ">
+            <img src="images/drucker1.jpg" alt="" style="width:200px; height:250px;">
+            <h3>All I Need Is a Printer</h3>
+            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/drucker2.jpg" alt="" style="width:200px; height:230px;">
+            <h3>Priters here</h3>
+            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/drucker3.jpg" alt="" style="width:200px; height:250px;">
+            <h3>Something random</h3>
+            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/drucker4.jpg" alt="" style="width:200px; height:250px;">
+            <h3>Le French</h3>
+            <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+    </div>
+
+    <!-- Third Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-quarter ">
+            <img src="images/laptop3.png" alt="" style="width:200px; height:250px;">
+            <h3>All I Need Is a Laptop</h3>
+            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter " >
+            <img src="images/laptop.jpeg" alt=""  style="width:200px; height:230px;">
+            <h3>Laptop on sale</h3>
+            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/laptop2.jpg" alt=""  style="width:200px; height:250px;">
+            <h3>The Perfect Laptop</h3>
+            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+        <div class="w3-quarter ">
+            <img src="images/laptop4.jpg" alt=""  style="width:200px; height:250px;">
+            <h3>Le laptop</h3>
+            <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            <input type="submit" name="add_to_cart" style="text-align: center"  class="btn btn-danger"  style="float:left; margin-bottom:8px;"
+                   value="Add to Cart"/>
+        </div>
+    </div>
+
+    <!-- Pagination -->
 
 
+    <hr id="about">
 
+    <!-- About Section -->
+    <div class="w3-container w3-padding-32 w3-center">
+        <h3>Who are we</h3>
+        <img src="images/who.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
+        <div class="w3-padding-32">
+            <h4><b>We are the best!</b></h4>
+            <h6><i>With Passion For Real</i></h6>
+            <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        </div>
+    </div>
+    <hr>
+
+
+    <!-- End page content -->
+</div>
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

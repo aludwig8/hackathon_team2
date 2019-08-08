@@ -1,145 +1,150 @@
-{% include 'includes/navbar.twig'%}
+<!DOCTYPE html>
+<html>
+<title>Online Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+    body, html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
 
+    .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("images/about.jpg");
+        min-height: 75%;
+    }
 
+    .menu {
+        display: none;
+    }
+</style>
+<body>
 
+<!-- Links (sit on top) -->
 
-</head>
-<div class="Line" style ="height:10px; background:darkred"></div>
-<div class="site-overlay"></div>
-
-<header id="home">
-    <div class="container-fluid">
-        <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
-        <div class="container">
-
-            <div class="jumbotron">
-                <div class="col-md-4"> <h1 class="text:center"><small>About our</small></br>
-                        <strong>shop</strong></h1></div>
-                <p>Duis aute irure dolor in reprehender
-                    it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <p><a class="btn btn-primary btn-lg" role="button" href="{{ path_for('home')}}"> home</a>
-                    <a target="_blank" href="{{ path_for('about')}}"
-                       class="btn btn-lg btn-danger" role="button"> Products</a></p>
-            </div>
-        </div>
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+        <span class="w3-tag">Open from 8am to 5pm</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+        <span class="w3-text-white" style="font-size:90px">The<br>SHOP</span>
+    </div>
+    <div class="w3-display-bottomright w3-center w3-padding-large">
+        <span class="w3-text-white">15 Adr street, 5015</span>
     </div>
 </header>
-<br><br>
-<section id="feat">
-    <div class="container">
-        <div class="row features">
-            <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="100ms">
-                <span class="typcn typcn-notes-outline x3"></span>
-                <h4 style="color:red">Lorem ipsum dolor sit amet</h4>
-                <p style="color:darkred">
+{% include 'includes/navbar.twig'%}
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-                    mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-                    it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+    <!-- About Container -->
+    <div class="w3-container" id="about">
+        <div class="w3-content" style="max-width:700px">
+            <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE SHOP</span></h5>
+            <p> lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches, as well as a selection of sides and salads and other good stuff.</p>
+            <div class="w3-panel w3-leftbar w3-light-grey">
+                <p><i>"lorem ipsum dolor sit amet, consectetur adipiscing elit,".</i></p>
+                <p>lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
             </div>
-            <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="300ms">
-                <span class="typcn v typcn-media-pause-outline x3"></span>
-                <h4 style="color:red">Lorem ipsum dolor sit amet</h4>
-
-                <p style="color:darkred">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-                    mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-                    it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-            <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="500ms">
-                <span class="typcn typcn-microphone-outline x3"></span>
-                <h4 style="color:red">Lorem ipsum dolor sit amet</h4>
-
-                <p style="color:darkred">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-                    mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-                    it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+            <img src="images/laptop3.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+            <p><strong>Opening hours:</strong> everyday from 8am to 5pm.</p>
+            <p><strong>Address:</strong> 15 Sejdi Kreziu, Prishine</p>
         </div>
     </div>
-</section>
-<br><br><br>
 
-<section id="news" class="blog wow fadeInUp" data-wow-delay="300ms">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <h2>Lorem ipsum dolor sit amet, consectetur</h2>
-                <p>   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-                    mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-                    it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-                    it in voluptate velit esse cillum dolore eu fugiat </p>
-                <a class="btn btn-danger btn-lg" href="{{ path_for('products')}}">Take a Look <i class="fa fa-arrow-circle-o-right"></i> </a>
-            </div>
+    <!-- Menu Container -->
+    <div class="w3-container" id="menu">
+        <div class="w3-content" style="max-width:700px">
 
-            <div class="col-md-5">
-                <a href="#">
-                    <img src="Images/laptop2.jpg" alt="" class="img-responsive">
+            <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">PRODUCTS YOU MA FIND AT US</span></h5>
+
+            <div class="w3-row w3-center w3-card w3-padding">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+                    <div class="w3-col s6 tablink">PCs and LAPTOPS</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+                    <div class="w3-col s6 tablink">PRINTERS</div>
                 </a>
             </div>
+
+            <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+                <h5>lorem ipsum dolor sit amet</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m</p><br>
+
+                <h5>lorem ipsum dolor sit amet</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m</p><br>
+
+                <h5>lorem ipsum dolor sit amet</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m</p><br>
+
+                <h5>lorem ipsum dolor sit amet</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m</p><br>
+
+                <h5>lorem ipsum dolor sit amet</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m</p>
+            </div>
+
+            <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+                <h5>smth random</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor </p><br>
+
+                <h5>ramdon text</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor </p><br>
+
+                <h5>dummy dummyy</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor /p><br>
+
+                <h5>random text</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor </p><br>
+
+                <h5>randomrandom</h5>
+                <p class="w3-text-grey">consectetur adipiscing elit, sed do eiusmod tempor </p>
+            </div>
+            <img src="/w3images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
         </div>
     </div>
-</section>
 
-<!-- Container (About Section) -->
-<section class="wrapper style5">
-    <div class="col-md-2"></div>
-    <div class="inner col-md-8" id="about">
+    <!-- Contact/Area Container -->
+    <div class="w3-container" id="where" style="padding-bottom:32px;">
+        <div class="w3-content" style="max-width:700px">
+            <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
+            <p>Find us at some address at some place.</p>
+            <img src="images/3.jpg" class="w3-image" style="width:100%">
+            <br><br>
+            <p><span class="w3-tag">FYI!</span> Wonsectetur adipiscing elit, sed do eiusmod temporall. onsectetur adipiscing elit, sed do eiusmod tempor:</p>
 
-        <h3 class="description">The history of out shop</h3>
-        <p class="FieldInfo"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-            mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-            it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-            mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-            it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-
-        <p class="FieldInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-            mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-            it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						</p>
-
-        <hr />
-
-        <h4 class="description">Our shop today</h4>
-        <p class="FieldInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore .			</p>
-
-        <p class="FieldInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla
-            mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehender
-            it in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore e!</small></p>
-
-    </div>
-</section>
-<div class="col-md-2"></div>
-<footer>
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-8">
-                <br><br><br>
-                <p>© 2019 Designed and Developed by <a target="_blank" href="#">Kaltrina and Irfan</a></p>
-            </div>
-            <div class="col-md-4">
-                <!-- <p class="text-right social"><i class="typcn typcn-social-facebook-circular"></i><i class="typcn typcn-social-twitter-circular"></i><i class="typcn typcn-social-tumbler-circular"></i><i class="typcn typcn-social-github-circular"></i><i class="typcn typcn-social-dribbble-circular"></i></p>-->
-            </div>
         </div>
     </div>
-</footer>
 
+    <!-- End page content -->
+</div>
+
+<!-- Footer -->
+
+
+<script>
+    // Tabbed Menu
+    function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+    }
+    document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
