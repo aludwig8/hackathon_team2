@@ -18,6 +18,6 @@ class PasswordConfirmation extends AbstractRule
 
     public function validate($input)
     {
-        return password_verify($input, $this->password);
+        return $this->password == $input;
     }
 }
