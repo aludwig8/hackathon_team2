@@ -12,7 +12,7 @@ class LoginController extends BaseController
 {
     public function create($request, $response)
     {
-        return $this->container->view->render($response, 'login.twig');
+        return $this->view->render($response, 'login.twig');
     }
 
     public function login($request, $response)
@@ -22,9 +22,10 @@ class LoginController extends BaseController
             'password' => v::notEmpty()
         ]);
 
+
         if ($validation->failed()) {
-            return 'Validation Error';
-            return $response->withRedirect($this->router->pathFor('login'));
+            $errors = $_SESSION['errors'];
+            return $this->view->render($response, 'login.twig', compact('errors'));
         }
 
         $auth = $this->auth->attempt(
@@ -33,8 +34,10 @@ class LoginController extends BaseController
         );
 
         if (!$auth) {
-            $this->flash->addMessage('error', 'Wrong email or password');
-            return $response->withRedirect($this->router->pathFor('login'));
+            $errors = [
+                "wrong_username_or_password" => 'Wrong email or password'
+            ];
+            return $this->view->render($response, 'login.twig', compact('errors'));
         }
 
         return $response->withRedirect($this->router->pathFor('products'));

@@ -22,11 +22,12 @@ class RegisterController extends BaseController
             'email' => v::noWhitespace()->notEmpty()->email()->length(2, 50)->uniqueEmail(),
             'full_name' => v::noWhitespace()->notEmpty()->length(2, 50)->alpha(),
             'password' => v::noWhitespace()->notEmpty()->length(5, 20),
+            'password_confirmation' => v::noWhitespace()->notEmpty()->length(5, 20)->passwordConfirmation($request->getParam('password')),
         ]);
 
         if ($validation->failed()) {
-            return 'Validation Error';
-            return $response->withRedirect($this->router->pathFor('register'));
+            $errors = $_SESSION['errors'];
+            return $this->view->render($response, 'register.twig', compact('errors'));
         }
 
         $user = User::create([
@@ -40,8 +41,9 @@ class RegisterController extends BaseController
 
         $user->save();
 
-        $this->flash->addMessage('message', 'You have been signed up');
-        return $response->withRedirect($this->router->pathFor('login'));
+        $success = "Your account has been created successfully";
+        return $this->view->render($response, 'login.twig', compact('success'));
+
 
     }
 }

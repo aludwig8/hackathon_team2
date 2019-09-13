@@ -117,7 +117,7 @@
             </div>
 
             <form method="post" action="{{ path_for('register.store') }}">
-
+                {% include 'includes/errors.twig' %}
                 <div class="input-group">
                     <label class="FieldInfo">Full Name:</label>
                     <input type="text" name="full_name" value="">

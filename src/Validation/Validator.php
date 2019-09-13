@@ -14,7 +14,7 @@ class Validator
             try {
                 $rule->setName(ucfirst($field))->assert($request->getParam($field));
             } catch (\Exception $e) {
-                $this->errors[$field] = $e->getMessages();
+                $this->errors[$field] = $e->getMessages()[0];
             }
         }
         $_SESSION['errors'] = $this->errors;
