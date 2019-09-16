@@ -15,4 +15,8 @@ return function (App $app) {
     $app->get('/register', 'Src\Controller\Auth\RegisterController:create')->setName('register');
     $app->post('/register', 'Src\Controller\Auth\RegisterController:store')->setName('register.store');
 
+    $app->get('/shopping-cart', 'Src\Controller\CartController:index')->setName('cart.index');
+    $app->post('/shopping-cart', 'Src\Controller\CartController:store')->setName('cart.store');
+    $app->post('/shopping-cart/delete', 'Src\Controller\CartController:destroy')->setName('cart.destroy');
+
 };

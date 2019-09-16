@@ -53,20 +53,22 @@
 
     <!-- First Photo Grid-->
 
-        {% for product in products %}
+    {% for product in products %}
 
-            <div class="w3-quarter col-md-3 ">
-                <img src="/{{ product.profile_picture }}" alt="" style="width:200px; height:247px">
-                <h3>{{ product.name }}</h3>
-                <p>{{ product.description }}</p>
+        <div class="w3-quarter col-md-3 ">
+            <img src="/{{ product.profile_picture }}" alt="" style="width:200px; height:247px">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <form method="post" action="{{ path_for('cart.store') }}">
+                <input type="hidden" name="product" value="{{ product.id }}">
                 <input type="submit" name="add_to_cart" style="text-align: center" class="btn btn-danger"
                        style="float:left; margin-bottom:8px;"
                        value="Add to Cart"/>
-            </div>
+            </form>
+        </div>
 
 
-        {% endfor %}
-
+    {% endfor %}
 
 
     <!-- Pagination -->
