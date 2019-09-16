@@ -42,8 +42,7 @@ $container['view'] = function ($container) {
         new Slim\Flash\Messages()
     ));
 
-    // dd('test');
-
+    $view->getEnvironment()->addGlobal("user", $_SESSION['user']);
 
     return $view;
 };
