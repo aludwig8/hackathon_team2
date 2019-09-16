@@ -12,11 +12,16 @@ class LoginController extends BaseController
 {
     public function create($request, $response)
     {
+        if ($this->auth->check())
+            return $response->withRedirect($this->router->pathFor('products'));
         return $this->view->render($response, 'login.twig');
     }
 
     public function login($request, $response)
     {
+        if ($this->auth->check())
+            return $response->withRedirect($this->router->pathFor('products'));
+
         $validation = $this->validator->validate($request, [
             'email' => v::noWhitespace()->notEmpty()->email(),
             'password' => v::notEmpty()

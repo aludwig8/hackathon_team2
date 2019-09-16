@@ -2,11 +2,12 @@
 <html>
 <head>
     <style>
-        body{
+        body {
             font-family: "Helvetica Neue" !important;
             font-size: 14px !important;
             color: #333333 !important;
         }
+
         ul {
             list-style-type: none;
             margin: 0;
@@ -46,10 +47,12 @@
 <body>
 
 <ul>
-
-
-    <li style="float:right"><a href="{{path_for('login')}}">login</p></a></li>
-    <li style="float:right"><a  href="{{path_for('register')}}">sign up</a></li>
+    {% if user is not empty %}
+        <li style="float:right"><a href="{{ path_for('login.logout') }}">logout</p></a></li>
+    {% else %}
+        <li style="float:right"><a href="{{ path_for('login') }}">login</p></a></li>
+        <li style="float:right"><a href="{{ path_for('register') }}">sign up</a></li>
+    {% endif %}
 </ul>
 
 </body>
